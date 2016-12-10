@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <div style="width: 50%; margin: 0 auto;">
+        <form action="user/getUser.php" method="post">
+            <label for="username">username</label>
+            <input id="username" type="text" name="username"><br><br>
+            <label for="password">password</label>
+            <input id="password" type="password" name="password"><br> <br>
+            <input type="hidden" name="api" value="nebbsie">
+            <input type="hidden" name="token" value="e85ba0cdec392de4d239">
+            <input type="submit" value="Login">
+        </form>
+
+        <form action="user/createUser.php" method="post">
+            <label for="username">username</label>
+            <input id ="username" type="text" name="username"><br><br>
+
+            <label for="username">fname</label>
+            <input id ="fname" type="text" name="fname"><br><br>
+
+            <label for="lname">lname</label>
+            <input id ="lname" type="text" name="lname"><br><br>
+
+            <label for="password">password</label>
+            <input id="password" type="password" name="password"><br> <br>
+
+            <label for="password-verify">password verify</label>
+            <input id="password-verify" type="password" name="password-verify"><br> <br>
+            <input type="hidden" name="api" value="nebbsie">
+            <input type="hidden" name="token" value="e85ba0cdec392de4d239">
+            <input type="submit" value="Register">
+        </form>
+
+        <form action="user/deleteUser.php" method="post">
+            <label for="username">username</label>
+            <input id="username" type="text" name="username"><br><br>
+            <label for="password">password</label>
+            <input id="password" type="password" name="password"><br> <br>
+            <input type="hidden" name="api" value="nebbsie">
+            <input type="hidden" name="token" value="e85ba0cdec392de4d239">
+            <input type="submit" value="Delete">
+        </form>
+    </div>
+</body>
+
+</html>
