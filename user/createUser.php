@@ -13,13 +13,14 @@ header('Content-Type: application/json');
 $authenticated = false;
 
 // Check if the username and password has been sent.
-if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['password-verify']) && isset($_POST['fname']) && isset($_POST['lname']) ){
+if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['password-verify']) && isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['email']) ){
 		// got username and password.
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 		$password_verify = $_POST['password-verify'];
 		$fname = $_POST['fname'];
 		$lname = $_POST['lname'];
+		$email = $_POST['email'];
 
 		// Check if the passwords are the same.
 		if(strcmp($password, $password_verify)){
@@ -49,8 +50,8 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['passw
 
 // If authenticated do the search for user.
 if($authenticated === true){
-	$sqlCreateUser = "INSERT INTO users (username, password, fname, lname)
-	 								  VALUES ('$username' , '$password', '$fname', '$lname')";
+	$sqlCreateUser = "INSERT INTO users (username, email ,password, fname, lname)
+	 								  VALUES ('$username' ,'$email' ,'$password', '$fname', '$lname')";
 	// Checks if the user is created if it has not it will create a user.
   if(checkIfUserExists($username)){
 		$res = new ErrorResponse();

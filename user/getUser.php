@@ -12,9 +12,9 @@ header('Content-Type: application/json');
 $authenticated = false;
 
 // Check if the username and password has been sent.
-if(isset($_POST['username']) && isset($_POST['password']) ){
+if(isset($_POST['email']) && isset($_POST['password']) ){
 		// got username and password.
-		$username = $_POST['username'];
+		$email = $_POST['email'];
 		$password = $_POST['password'];
 
 		if(isset($_POST['api']) && isset($_POST['token'])){
@@ -39,7 +39,7 @@ if(isset($_POST['username']) && isset($_POST['password']) ){
 
 // If authenticated do the search for user.
 if($authenticated === true){
-	$SQLGETUSER = "SELECT * FROM users WHERE username = '$username'";
+	$SQLGETUSER = "SELECT * FROM users WHERE email = '$email'";
 	$result = $conn->query($SQLGETUSER);
 	$conn->close();
 
